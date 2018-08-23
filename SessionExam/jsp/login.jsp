@@ -7,7 +7,12 @@ pageEncoding="EUC-KR"%>
 		<title>Title</title>
 	</head>
 	<body>
-		
+		<%
+		session = request.getSession();
+		if(session.getAttribute("sid")!=null){
+			response.sendRedirect("loginOk.jsp");
+		}
+		%>
 		<form action="/SessionPrac/loginCon" method="post">
 			ID:<input type="text" name="mUserID"><br>
 			PWD:<input type="password" name="mUserPwd"><br>
